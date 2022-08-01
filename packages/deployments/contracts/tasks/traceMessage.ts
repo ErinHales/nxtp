@@ -19,11 +19,11 @@ const mnemonic =
 // https://github.com/nomad-xyz/monorepo/blob/main/packages/monitor/src/trace.ts
 
 const STATUS_TO_STRING = {
-  [MessageStatus.dispatched]: "Dispatched on Home",
-  [MessageStatus.included]: "Included in Home Update",
-  [MessageStatus.relayed]: "Relayed to Replica",
-  [MessageStatus.received]: "Received",
-  [MessageStatus.processed]: "Processed",
+  [MessageStatus.Dispatched]: "Dispatched on Home",
+  [MessageStatus.Included]: "Included in Home Update",
+  [MessageStatus.Relayed]: "Relayed to Replica",
+  [MessageStatus.Received]: "Received",
+  [MessageStatus.Processed]: "Processed",
 };
 
 function printStatus(message: NomadMessage<NomadContext>, nomadStatus: MessageStatus) {
@@ -65,10 +65,9 @@ export default task("trace-message", "See the status of a nomad message")
 
     // Get the domain + context
     const network = await hre.ethers.provider.getNetwork();
-    const nomadConfig = await getNomadConfig(network.chainId);
-    const { domain: originDomain, name: originName } = await getDomainInfoFromChainId(network.chainId, hre);
+    const { domain: originDomain } = await getDomainInfoFromChainId(network.chainId, hre);
 
-    const context = new NomadContext(nomadConfig);
+    const context = await NomadContext.fetch(env);
     const destinationChainId = context.mustGetDomain(destination).specs.chainId;
 
     const s3Url = "https://nomadxyz-staging-proofs.s3.us-west-2.amazonaws.com/";
@@ -131,7 +130,7 @@ export default task("trace-message", "See the status of a nomad message")
     printStatus(message, status);
     const now = Date.now() / 1000 // timestamp in seconds
     const readyToProcess = now > confirmAt
-    if (status === MessageStatus.relayed && shouldProcess && readyToProcess) {
+    if (status === MessageStatus.Relayed && shouldProcess && readyToProcess) {
       console.log("============== attempting to process ===========");
       // register signer
       const signer = Wallet.fromMnemonic(mnemonic);

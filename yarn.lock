@@ -756,8 +756,8 @@ __metadata:
   dependencies:
     "@connext/nxtp-utils": "workspace:*"
     "@nomad-xyz/configuration": 0.1.0-rc.25
-    "@nomad-xyz/sdk": 2.1.0
-    "@nomad-xyz/sdk-bridge": 1.1.0
+    "@nomad-xyz/sdk": 2.1.1
+    "@nomad-xyz/sdk-bridge": 1.1.1
     "@nomiclabs/hardhat-ethers": 2.1.0
     "@nomiclabs/hardhat-etherscan": 3.1.0
     "@nomiclabs/hardhat-waffle": 2.0.3
@@ -907,8 +907,8 @@ __metadata:
     "@connext/nxtp-utils": "workspace:*"
     "@graphql-codegen/cli": 2.9.1
     "@nomad-xyz/configuration": 0.1.0-rc.25
-    "@nomad-xyz/sdk": 2.1.0
-    "@nomad-xyz/sdk-bridge": 1.1.0
+    "@nomad-xyz/sdk": 2.1.1
+    "@nomad-xyz/sdk-bridge": 1.1.1
     "@sinclair/typebox": 0.24.20
     "@types/mocha": 9.1.1
     "@types/sinon": 10.0.13
@@ -3332,10 +3332,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nomad-xyz/configuration@npm:0.1.0-rc.25, @nomad-xyz/configuration@npm:^0.1.0-rc.23":
+"@nomad-xyz/configuration@npm:0.1.0-rc.25":
   version: 0.1.0-rc.25
   resolution: "@nomad-xyz/configuration@npm:0.1.0-rc.25"
   checksum: 6bdbc188e43167c7f4da28e8f9cbb594b5832a03916a11cb6fc6be2ad2cc00fd91cf20ad6e0b82da1a17a9be0b73f1222bf58c41263f69a7d5e90bd5449faede
+  languageName: node
+  linkType: hard
+
+"@nomad-xyz/configuration@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@nomad-xyz/configuration@npm:0.1.0"
+  checksum: b75f717e130e42b4fcae7924db99b1ef72c11dab2ce12bd81f41f73500b82da7d43b4a21adcb6481a351ca92754f8ed166cff88e9bd4bbffde7678dcf02b913d
   languageName: node
   linkType: hard
 
@@ -3385,31 +3392,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nomad-xyz/sdk-bridge@npm:1.1.0":
-  version: 1.1.0
-  resolution: "@nomad-xyz/sdk-bridge@npm:1.1.0"
+"@nomad-xyz/sdk-bridge@npm:1.1.1":
+  version: 1.1.1
+  resolution: "@nomad-xyz/sdk-bridge@npm:1.1.1"
   dependencies:
-    "@nomad-xyz/configuration": ^0.1.0-rc.23
+    "@nomad-xyz/configuration": ^0.1.0
     "@nomad-xyz/contracts-bridge": ^1.1.0
-    "@nomad-xyz/sdk": ^2.1.0
+    "@nomad-xyz/sdk": ^2.1.1
     ethers: ^5.0.0
     web3: ^1.6.1
-  checksum: d438dbfd9948f9e2437690cf89e9e04b0fc37064d22ec1b512722a2282c430202f18cc13fca0cf0e7aa605d5224d5754ad9ab84a452271ab0ca1de6289ae642f
+  checksum: f1ac171bba2283d98ba7cdc4259e96f06d17cb149d1d48dcef2a9e15245d109bbc774f8b5c5c519c2bb306f09d870ac33b4664dc688e7ce42df0e05e544fa8da
   languageName: node
   linkType: hard
 
-"@nomad-xyz/sdk@npm:2.1.0, @nomad-xyz/sdk@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@nomad-xyz/sdk@npm:2.1.0"
+"@nomad-xyz/sdk@npm:2.1.1, @nomad-xyz/sdk@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@nomad-xyz/sdk@npm:2.1.1"
   dependencies:
-    "@nomad-xyz/configuration": ^0.1.0-rc.23
+    "@nomad-xyz/configuration": ^0.1.0
     "@nomad-xyz/contracts-core": ^1.1.0
     "@nomad-xyz/multi-provider": ^1.1.0
     cross-fetch: ^3.1.5
     ethers: ^5.0.0
     graphql: ^16.5.0
     graphql-request: ^4.3.0
-  checksum: b54038e07ceafa1de69a9343cb31ba50afff4074b5aee2d817f9b4b4765fcc44e25651ebc4b5f73b3ed6f164f732712fc05b917e154eb0fb761e1fde9a2ac0c2
+  checksum: 020b7bba922afcb98733b34a325d2db971694866fb49d022be45e8cac16482de7950903944c386edc0ddf199a7faabd0f36ff22366982eecd47d349f431b34a7
   languageName: node
   linkType: hard
 
